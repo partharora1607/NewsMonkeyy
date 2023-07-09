@@ -54,17 +54,17 @@ export class News extends Component {
 
   render() {
     return (
-      <div className="container my-3">
-        <h2 className="text-center">NewsMonkey - Top Headlines </h2>
+      <div className="container my-3" style={{ backgroundColor: "beige" }}>
+        <h2 className="text-center" style={{ color: "crimson" }}>
+          NewsMonkey - Top Headlines
+        </h2>
         <div className="row my-4">
           {this.state.articles.map((element) => {
             return (
               <div className="col-md-4" key={element.url}>
                 <NewsItems
-                  title={element.title.slice(0, 45)}
-                  description={
-                    element.description ? element.description.slice(0, 88) : ""
-                  }
+                  title={element.title}
+                  description={element.description ? element.description : ""}
                   imageUrl={element.urlToImage ? element.urlToImage : ""}
                   newsUrl={element.url ? element.url : ""}
                 />
